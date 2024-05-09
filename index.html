@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Land</title>
+    <link rel="stylesheet" href="styleschangetheme.css">
+    <style>
+        .slider-container {
+            max-width: 80%; /* Максимальная ширина контейнера слайдера */
+            margin: 0 auto; /* Центрирование слайдера */
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const playButtons = document.querySelectorAll('.play-button');
+            const songAudios = document.querySelectorAll('.song-audio');
+
+            playButtons.forEach((button, index) => {
+                button.addEventListener('click', () => {
+                    if (songAudios[index].paused) {
+                        songAudios.forEach(audio => audio.pause());
+                        songAudios[index].play();
+                    } else {
+                        songAudios[index].pause();
+                    }
+                });
+            });
+
+            const slider = document.querySelector('.slider');
+            const slides = document.querySelectorAll('.slide');
+            let slideIndex = 0;
+
+            function showSlide(n) {
+                if (n >= slides.length) {
+                    slideIndex = 0;
+                } else if (n < 0) {
+                    slideIndex = slides.length - 1;
+                }
+                slides.forEach(slide => slide.style.display = 'none');
+                slides[slideIndex].style.display = 'block';
+            }
+
+            function moveSlide(n) {
+                showSlide(slideIndex += n);
+            }
+
+            showSlide(slideIndex);
+
+            const prevButton = document.querySelector('.prev');
+            const nextButton = document.querySelector('.next');
+
+            prevButton.addEventListener('click', () => moveSlide(-1));
+            nextButton.addEventListener('click', () => moveSlide(1));
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            const searchButton = document.getElementById('searchButton');
+            const songItems = document.querySelectorAll('.song-item');
+            const searchResult = document.getElementById('searchResult');
+
+            function filterSongs() {
+                const searchTerm = searchInput.value.toLowerCase();
+                let count = 0;
+                songItems.forEach(songItem => {
+                    const title = songItem.querySelector('.song-title').innerText.toLowerCase();
+                    const artist = songItem.querySelector('.song-artist').innerText.toLowerCase();
+                    if (title.includes(searchTerm) || artist.includes(searchTerm)) {
+                        songItem.style.display = 'block';
+                        count++;
+                    } else {
+                        songItem.style.display = 'none';
+                    }
+                });
+                if (count === 0) {
+                    searchResult.style.display = 'block';
+                } else {
+                    searchResult.style.display = 'none';
+                }
+            }
+
+            searchButton.addEventListener('click', filterSongs);
+            searchInput.addEventListener('keyup', filterSongs);
+        });
+    </script>
+</head>
+<body>
+  
+    <header>
+      <nav>
+        <!-- Навигационное меню -->
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <!-- Поиск -->
+            <li><a href="search.html">Поиск</a></li>
+            <!-- Моя медиатека -->
+            <li>
+                <a href="my_media.html">Моя медиатека</a>
+                <ul class="submenu">
+                    <li><a href="genres.html">Жанры</a></li>
+                    <li><a href="diagramma.html">Диаграмма</a></li>
+                    <li><a href="galery.html">Фотогалерея</a></li>
+                </ul>
+            </li>
+            <!-- О нас -->
+            <li>
+                <a href="us.html">О нас</a>
+                <ul class="submenu">
+                    <li><a href="contacts.html">Команда</a></li>
+                    <li><a href="team.html">Набор в команду</a></li>
+                    <li><a href="about.html">Подробно о музыке</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+        <!-- Кнопка входа/регистрации -->
+        <button class="login-button">Вход/Регистрация</button>
+    </header>
+    <main>
+      <div class="slider-container"> <!-- Обертка для слайдера -->
+        <div class="slider"> 
+          <img class="slide slide1" src="images/index/control.jpg"></img> 
+          <img class="slide slide2" src="images/index/dirtypalm.jpg"></img> 
+          <img class="slide slide3" src="images/index/lightitup.jpg"></img> 
+          <a class="prev" onclick="moveSlide(-1)">&#10094;</a> 
+          <a class="next" onclick="moveSlide(1)">&#10095;</a> 
+        </div>
+      </div>
+      <div class="search-container">
+        <input type="text" id="searchInput" class="search-input" placeholder="Поиск...">
+        <button id="searchButton" class="search-button">Искать</button>
+      </div>
+        <h1>Что в тренде</h1>
+        <ul class="song-list">
+          <h1 id="searchResult" style="display: none;">Ничего не найдено</h1>
+          <li class="song-item">
+            <img class="song-image" src="images/index/lightitup.jpg" alt="Music Land Logo">
+            <h2 class="song-title">Light It Up</h2>
+            <p class="song-artist">Робин Хюстен</p>
+            <audio class="song-audio" src="audio/lightitup.mp3"></audio>
+            <div class="song-buttons">
+              <button class="play-button">Играть</button>
+              <a class="download-button" href="audio/lightitup.mp3" download>Скачать</a>
+            </div>
+          </li>
+          <br><br>
+          <li class="song-item">
+            <img class="song-image" src="images/index/control.jpg" alt="Music Land Logo">
+            <h2 class="song-title">Control</h2>
+            <p class="song-artist">Unknown Brain</p>
+            <audio class="song-audio" src="audio/control.mp3"></audio>
+            <div class="song-buttons">
+              <button class="play-button">Играть</button>
+              <a class="download-button" href="audio/control.mp3" download>Скачать</a>
+            </div>
+          </li>
+        <br><br>
+          <li class="song-item">
+            <img class="song-image" src="images/index/myheart.jpg" alt="Music Land Logo">
+            <h2 class="song-title">My Heart</h2>
+            <p class="song-artist">Different Heaven</p>
+            <audio class="song-audio" src="audio/myheart.mp3"></audio>
+            <div class="song-buttons">
+              <button class="play-button">Играть</button>
+              <a class="download-button" href="audio/myheart.mp3" download>Скачать</a>
+            </div>
+          </li>
+          <br><br>
+          <li class="song-item">
+            <img class="song-image" src="images/index/dirtypalm.jpg" alt="Music Land Logo">
+            <h2 class="song-title">Oblivion</h2>
+            <p class="song-artist">Dirty Palm</p>
+            <audio class="song-audio" src="audio/DirtyPalm.mp3"></audio>
+            <div class="song-buttons">
+              <button class="play-button">Играть</button>
+              <a class="download-button" href="audio/DirtyPalm.mp3" download>Скачать</a>
+            </div>
+          </li>
+        </ul>
+        <!-- Приветствие и описание сайта -->
+        <div class="welcome">
+            <h2>Добро пожаловать в Music Land!</h2>
+            <p>Мы предлагаем вам огромный выбор музыкальных треков, альбомов и исполнителей во всех жанрах - от популярной музыки и рока до джаза и классики. Наш сайт - ваш уникальный музыкальный оазис в сети, где каждый меломан может найти что-то особенное для себя!</p>
+        </div>
+    </main>
+    <!-- Подвал -->
+    <div class="site-info">
+        <p>&copy; 2024 My Site. All rights reserved.</p>
+        <p>Developed by Yerlan Baltabayev.</p>
+    </div>
+</body>
+</html>

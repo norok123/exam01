@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Content with Chart.js</title>
+<link rel="stylesheet" href="styles.css">
+<!-- Подключение библиотеки Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+  /* Стили для контейнера графика */
+  #chart-container {
+    width: 80%;
+    margin: 20px auto;
+  }
+</style>
+</head>
+<a href="index.html" class="return-btn">Вернуться на главную</a>
+<body>
+
+<div id="chart-container">
+  <canvas id="myChart"></canvas>
+</div>
+
+<button onclick="updateChart()">Обновить График</button>
+
+<script>
+// Создание и отображение графика при загрузке страницы
+document.addEventListener('DOMContentLoaded', function () {
+  renderChart();
+});
+
+// Функция для создания и отображения графика
+function renderChart() {
+  var ctx = document.getElementById('myChart').getContext('2d');
+  var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май'],
+      datasets: [{
+        label: 'Прослушивания',
+        data: [50, 80, 60, 70, 90],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+}
+
+// Функция для обновления данных графика
+function updateChart() {
+  var newData = [60, 70, 50, 80, 85]; // Новые данные для графика
+  var chart = Chart.getChart('myChart'); // Получаем ссылку на созданный график
+  chart.data.datasets[0].data = newData; // Обновляем данные графика
+  chart.update(); // Обновляем отображение графика
+}
+</script>
+
+</body>
+</html>

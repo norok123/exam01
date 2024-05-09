@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Красивая таблица</title>
+    <style>
+        /* Стили для таблицы */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+            background-color: #9b30ff; /* Фиолетовый основной цвет таблицы */
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #9b30ff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #2ecf1c;
+        }
+
+        /* Стили для списка */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 5px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        li:before {
+            content: "•";
+            color: red;
+            font-size: 24px;
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        li:hover {
+            background-color: #9b30ff;
+            transform: translateX(10px);
+        }
+    </style>
+</head>
+<a href="index.html" class="return-btn">Вернуться на главную</a>
+<body>
+
+<h2>Таблица популярных исполнителей 2023 года</h2>
+
+<table>
+    <tr>
+        <th>Имя/Псевдоним</th>
+        <th>Возраст</th>
+        <th>Страна</th>
+    </tr>
+    <tr>
+        <td>Billie Eilish</td>
+        <td>20</td>
+        <td>США</td>
+    </tr>
+    <tr>
+        <td>Drake</td>
+        <td>36</td>
+        <td>США</td>
+    </tr>
+    <tr>
+        <td>Olivia Rodrigo</td>
+        <td>19</td>
+        <td>США</td>
+    </tr>
+</table>
+
+<h2>Интересные факты</h2>
+
+<ul>
+    <li>Billie Eilish стала самой молодой победительницей в истории премии "Грэмми".</li>
+    <li>Дрейк держит рекорд по количеству хитов в Топ 100 чартах Billboard.</li>
+    <li>Оливия Родриго стала популярной благодаря своему хиту "drivers license".</li>
+</ul>
+
+</body>
+</html>

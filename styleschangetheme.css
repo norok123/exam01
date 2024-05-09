@@ -1,0 +1,267 @@
+body {
+    background-image: url("images/index/59277.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1000px;
+    background-position: center center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color:#fff
+  }
+  
+  .logo {
+    display: inline-block;
+    margin-right: auto;
+    margin-left: 20px;
+    vertical-align: middle;
+    width: 40px; /* Ширина логотипа */
+    height: 40px; /* Высота логотипа */
+    background-image: url('images/index/logo.jpg'); /* Путь к изображению логотипа */
+    background-size: cover; /* Заполнение контейнера размером логотипа */
+    background-repeat: no-repeat; /* Отключение повтора изображения */
+    background-position: top left;
+}
+
+  .song-image {
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin-right: 1rem;
+  }
+  
+  .song-title {
+    margin: 0;
+    font-size: 1.2rem;
+    color: white;
+  }
+  
+  .song-artist {
+    margin: 0;
+    font-size: 1rem;
+    color: #ffffff;
+  }
+  nav {
+    background-color: #513d6c;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative; /* Добавлено для корректного позиционирования подменю */
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+/* Стили для второго уровня меню */
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    padding: 10px;
+    top: 100%; /* Поднять подменю на уровень ниже родительского пункта меню */
+    left: 0;
+    z-index: 1;
+}
+
+nav ul li:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    display: block;
+    margin-bottom: 5px;
+}
+  .container {
+    max-width: 5000px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .login-button {
+    position: absolute; /* абсолютное позиционирование для позиционирования кнопки относительно окна браузера */
+    top: 0; /* смещение от верхнего края окна браузера */
+    right: 0; /* смещение от правого края окна браузера */
+    padding: 0.5rem 1rem; /* настройка внешних отступов */
+    background-color: #725FC0; /* фон кнопки */
+    color: #fff; /* цвет текста */
+    border: none; /* убираем границу */
+    border-radius: 0.25rem; /* скругляем углы */
+    cursor: pointer; /* указываем, что это кнопка */
+  }
+
+  .footer {
+    background-color: #28094f;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  .footer a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer a:hover {
+    color: #ccc;
+  }
+  
+  footer a:hover {
+    color: #ccc;
+  }
+  .site-info {
+    background-color: #725FC0;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    margin-top: 10px;
+  }
+  
+  .site-info p {
+    margin: 0;
+    line-height: 1.5;
+  }
+  
+  /* Стили для поисковой строки */
+  .search-container {
+    margin-bottom: 20px;
+  }
+  
+  .search-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 200px;
+  }
+  
+  .search-button {
+    padding: 8px 16px;
+    background-color: #007bffe4;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .search-button:hover {
+    background-color: #300984;
+  }
+  
+  .song-buttons {
+    margin-top: 10px;
+  }
+  
+  .play-button,
+  .download-button {
+    padding: 8px 16px;
+    margin-right: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .play-button:hover,
+  .download-button:hover {
+    background-color: #0056b3;
+  }
+
+  .song-image {
+  transition: transform 0.2s ease-in-out;
+}
+
+.song-image:hover {
+  transform: scale(1.1); /* Увеличивает размер изображения на 10% при наведении */
+}
+
+.main-content {
+  display: flex;
+  flex-direction: row;
+}
+
+.song-list {
+  flex: 1;
+}
+
+.slider-container {
+  flex: 0 0 40%; /* Устанавливаем фиксированную ширину для слайдера */
+  margin-top: 10%; /* Перемещаем слайдер на 10% от верхнего края */
+  margin-left: auto; /* Выравниваем слайдер по правому краю */
+  margin-right: auto; /* Добавляем небольшой отступ между слайдером и основным контентом */
+  overflow: hidden; /* Скрываем содержимое, которое выходит за границы слайдера */
+}
+
+.slider {
+  max-width: 100%; /* Устанавливаем максимальную ширину для слайдера */
+}
+
+.slider img {
+  display: block; /* Убираем лишние отступы */
+  width: 40%; /* Занимаем всю доступную ширину */
+  height: auto; /* Автоматически подстраиваем высоту */
+}
+
+.slide {
+  display: none; /* Скрываем слайды по умолчанию */
+  text-align: center; /* Выравниваем текст по центру */
+  padding: 80px 20px; /* Отступы внутри слайдов */
+  background-color: rgba(249, 249, 249, 0); /* Прозрачный фон */
+  border-radius: 10px; /* Закругляем углы слайдов */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Добавляем тень */
+}
+
+.prev, .next {
+  cursor: pointer; /* Изменяем курсор при наведении */
+  position: absolute; /* Устанавливаем позицию абсолютно */
+  top: 50%; /* Помещаем кнопки по вертикали на середину слайдера */
+  transform: translateY(-50%); /* Смещаем кнопки на половину своей высоты назад */
+  padding: 15px; /* Размер кнопок */
+  background-color: rgba(0, 0, 0, 0.5); /* Цвет фона кнопок */
+  color: white; /* Цвет текста кнопок */
+  border-radius: 50%; /* Создаем круглые кнопки */
+  z-index: 1; /* Помещаем кнопки выше остальных элементов */
+}
+
+.prev {
+  left: 5; /* Выравниваем кнопку "назад" по левому краю */
+}
+
+.next {
+  right: 55%; /* Выравниваем кнопку "вперед" по правому краю */
+}

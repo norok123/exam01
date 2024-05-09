@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Land</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="search.js"></script>
+</head>
+
+<body>
+  
+    <header>
+      <nav>
+        <!-- Навигационное меню -->
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <!-- Поиск -->
+            <li><a href="search.html">Поиск</a></li>
+            <!-- Моя медиатека -->
+            <li>
+                <a href="my_media.html">Моя медиатека</a>
+                <ul class="submenu">
+                    <li><a href="genres.html">Жанры</a></li>
+                    <li><a href="diagramma.html">Диаграмма</a></li>
+                    <li><a href="galery.html">Фотогалерея</a></li>
+                </ul>
+            </li>
+            <!-- О нас -->
+            <li>
+                <a href="us.html">О нас</a>
+                <ul class="submenu">
+                    <li><a href="contacts.html">Команда</a></li>
+                    <li><a href="team.html">Набор в команду</a></li>
+                    <li><a href="about.html">Подробно о музыке</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    </nav>
+        <button class="login-button">Вход/Регистрация</button>
+    </header>
+    <main>
+      <div class="search-container">
+        <input type="text" id="searchInput" class="search-input" placeholder="Поиск...">
+        <button id="searchButton" class="search-button">Искать</button>
+      </div>
+
+      <ul class="song-list">
+        <h1 id="searchResult" style="display: none;">Ничего не найдено</h1>
+        <li class="song-item">
+          <img class="song-image" src="images/index/lightitup.jpg" alt="Music Land Logo">
+          <h2 class="song-title">Light It Up</h2>
+          <p class="song-artist">Робин Хюстен</p>
+          <audio class="song-audio" src="audio/lightitup.mp3"></audio>
+          <div class="song-buttons">
+            <button class="play-button">Играть</button>
+            <a class="download-button" href="audio/lightitup.mp3" download>Скачать</a>
+          </div>
+        </li>
+        <br><br>
+        <li class="song-item">
+          <img class="song-image" src="images/index/control.jpg" alt="Music Land Logo">
+          <h2 class="song-title">Control</h2>
+          <p class="song-artist">Unknown Brain</p>
+          <audio class="song-audio" src="audio/control.mp3"></audio>
+          <div class="song-buttons">
+            <button class="play-button">Играть</button>
+            <a class="download-button" href="audio/control.mp3" download>Скачать</a>
+          </div>
+        </li>
+      <br><br>
+        <li class="song-item">
+          <img class="song-image" src="images/index/myheart.jpg" alt="Music Land Logo">
+          <h2 class="song-title">My Heart</h2>
+          <p class="song-artist">Different Heaven</p>
+          <audio class="song-audio" src="audio/myheart.mp3"></audio>
+          <div class="song-buttons">
+            <button class="play-button">Играть</button>
+            <a class="download-button" href="audio/myheart.mp3" download>Скачать</a>
+          </div>
+        </li>
+        <br><br>
+        <li class="song-item">
+          <img class="song-image" src="images/index/dirtypalm.jpg" alt="Music Land Logo">
+          <h2 class="song-title">Oblivion</h2>
+          <p class="song-artist">Dirty Palm</p>
+          <audio class="song-audio" src="audio/DirtyPalm.mp3"></audio>
+          <div class="song-buttons">
+            <button class="play-button">Играть</button>
+            <a class="download-button" href="audio/DirtyPalm.mp3" download>Скачать</a>
+          </div>
+        </li>
+      </ul>
+      </main>
+      
+      <div class="site-info">
+        <p>&copy; 2024 My Site. All rights reserved.</p>
+        <p>Developed by Yerlan Baltabayev.</p>
+      </div>
+    </body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resonance</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    .container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  #error-message {
+    color: red;
+    margin-top: 10px;
+  }
+  </style>
+</head>
+<a href="index.html">Вернуться на главную</a>
+<body>
+    <h1 style="text-align: center;color: white;">История музыки</h1>
+    <h4 style="color: white; text-align: center;">Для улучшения сайта требуется опытный IT-специалист, заполните заявку и мы обязательно на нее ответим!
+    <div class="container">
+      <h2>Форма обратной связи</h2>
+      <form id="contactForm" onsubmit="return validateForm()">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required><br>
+    
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+    
+        <label for="message">Сообщение:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br>
+    
+        <input type="submit" value="Отправить">
+      </form>
+      <div id="error-message"></div>
+      
+      <button onclick="toggleData()">Отобразить/скрыть данные</button>
+      <div id="dataContainer" style="display: none;"></div>
+    </div>  
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2295.566814801006!2d69.1334427!3d54.875417199999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2skz!4v1715263044447!5m2!1sru!2skz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <script>
+      function sendEmail() {
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var message = document.getElementById('message').value;
+    
+        var subject = 'Сообщение через форму обратной связи';
+        var body = 'Имя: ' + name + '%0AEmail: ' + email + '%0AСообщение: ' + message;
+    
+        var mailtoLink = 'mailto:youremail@example.com?subject=' + subject + '&body=' + body;
+    
+        window.location.href = mailtoLink;
+    
+        // Очистка полей формы после отправки
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('message').value = '';
+    
+        return false;
+      }
+    </script>
+    
+    <script>
+      function validateForm() {
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var message = document.getElementById('message').value;
+  
+    var errorMessage = "";
+  
+    if (name == "") {
+      errorMessage += "Пожалуйста, введите ваше имя.\n";
+    }
+    if (email == "") {
+      errorMessage += "Пожалуйста, введите ваш email.\n";
+    } else if (!validateEmail(email)) {
+      errorMessage += "Пожалуйста, введите корректный email.\n";
+    }
+    if (message == "") {
+      errorMessage += "Пожалуйста, введите ваше сообщение.\n";
+    }
+  
+    if (errorMessage !== "") {
+      document.getElementById('error-message').innerText = errorMessage;
+      return false;
+    }
+  
+    // Здесь может быть отправка данных формы на сервер или другие действия
+    alert("Ваше сообщение отправлено!");
+  
+    return true;
+  }
+  
+  function validateEmail(email) {
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+  }
+  
+    </script>
+      <div class="site-info">
+        <p>&copy; 2023 My Site. All rights reserved.</p>
+        <p>Developed by Yerlan Baltabayev.</p>
+      </div>
+    </body>
+</html>
